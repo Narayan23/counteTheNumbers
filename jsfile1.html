@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .buttons{
+            display: inline-block;
+          }
+          .box1{
+            font-family: sans-serif;
+            font-size: 55px;
+            font-weight: bold;
+            margin-left: 20px;
+
+          }
+          .box2{
+            font-family: sans-serif;
+            color: rgb(43, 211, 43);
+            font-size: 70px;
+            font-weight: bold;
+            padding-bottom: 40px;
+            margin-left: 30px;
+            padding-top: 40px;
+          }
+          .button{
+            font-size: 25px;
+            height: 50px;
+            width: auto;
+            border-radius: 5px;
+            margin-left: 20px;
+
+          }
+          .mainpart{
+            margin: 200px 500px;
+          }
+
+        </style>
+    </head>
+    <body>
+        <div class="mainpart">
+            
+                <div class="box1">Counter</div>
+                <br>
+                 <div class="box2" id="number">Num</div><br>
+
+                <div class="buttons">
+                 <button class="button" id="dec">Decrease</button>
+                 <button class="button" id="reset">Reset</button>
+                 <button class="button" id="inc">Increase</button>
+                </div>
+            
+        </div>
+        <script>
+            let count=0;
+            const element1=document.getElementById('dec');
+            element1.addEventListener("click",decrease);
+            
+            function decrease(){
+                if(count>0){
+                count--;
+                document.getElementById('number').innerHTML=count;
+                }
+
+            }
+            const element2 =document.getElementById('reset');
+            element2.addEventListener("click",resetCount);
+
+            function resetCount(){
+                count=0;
+                document.getElementById('number').innerHTML=count;
+            }
+            
+            const element3=document.getElementById("inc");
+            element3.addEventListener('click',increase);
+            function increase(){
+                
+                count++;
+                document.getElementById('number').innerHTML=count;
+                
+            }
+
+        </script>
+    </body>
+</html>
